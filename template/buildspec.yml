@@ -1,0 +1,35 @@
+version: 0.2
+
+#env:
+  #variables:
+    # key: "value"
+    # key: "value"
+  #parameter-store:
+    # key: "value"
+    # key: "value"
+
+phases:
+  #install:
+    #commands:
+      # - command
+      # - command
+  #pre_build:
+    #commands:
+  build:
+    commands:
+      # build
+      - . ./script/export-pdf.sh
+  post_build:
+    commands:
+      # upload Slack
+      - . ./script/upload-pdf-to-slack.sh
+      - . ./script/exec_textlint.sh
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths

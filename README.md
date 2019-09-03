@@ -2,6 +2,9 @@
 
 パブリックにできるものはパブリックにしていこう精神
 
+- template
+  - 頒布物作成時のテンプレート
+
 ## 過去の頒布物
 
 - [書典6: mixi tech note #01 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-01)

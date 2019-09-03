@@ -1,0 +1,20 @@
+{
+    "plugins": {
+        "review": true
+    },
+    "rules": {
+        "max-ten": {
+            "max": 5
+        },
+        "spellcheck-tech-word": false,
+        "no-mix-dearu-desumasu": true,
+        "prh": {
+            "rulePaths": [
+                "./prh.yaml"
+            ]
+        }
+    },
+    "filters": {
+        "comments": true
+   }
+}
