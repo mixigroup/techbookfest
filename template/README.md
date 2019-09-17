@@ -74,3 +74,8 @@ CI などのためにスクリプトに下記の値を追加する
 - script/upload-pdf-to-slack の `REPO` にリポジトリ名 (org/repo)
 - script/upload-pdf-to-slack の `SLACK_CHANNEL` に通知したい Slack チャンネル名
 - script/upload-pdf-to-slack の `SLACK_TOKEN` に通知したい Slack のトークン (シークレットなどで)
+
+## 表紙と裏表紙
+
+電子版を作成するときには表紙と裏表紙を設定します。
+設定するには `config.yml` の `images/cover.png` と `images/backcover.png` を配置して `coverimage` と `backcover` のコメントアウトを外すだけです。
