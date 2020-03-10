@@ -8,7 +8,7 @@
 \rhead{\gtfamily\sffamily\bfseries\upshape \rightmark}
 \fancyfoot{} % clear all header and footer fields
 \fancyfoot[C]{\thepage}
-\renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\hskip0.5zw~#1}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\prechaptername\ \thechapter\ \postchaptername~#1}{}}
 \renewcommand{\headfont}{\gtfamily\sffamily\bfseries}
 
@@ -43,4 +43,7 @@
 \hypersetup{hidelinks}
 
 \floatplacement{figure}{H}
-\floatplacement{table}{htp}
+\floatplacement{table}{H}
+
+% space between English/Japanese characters in list environments (\z@ means 0, no space. You can comment out below line for backward compatibility.)
+\def\reviewlistxkanjiskip{\z@}
