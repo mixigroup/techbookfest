@@ -16,7 +16,7 @@ $ git clone git@github.com:mixi-inc/techbookfest-template.git
 [vvakame/review](https://hub.docker.com/r/vvakame/review/) のイメージをベースにして、textlint による静的解析を行うために諸々インストールしたイメージです。
 
 ```
-$ docker build -t techbookfest .
+$ docker build -t techbookfest manifest
 ```
 
 ### ビルド
@@ -24,7 +24,7 @@ $ docker build -t techbookfest .
 上記の Docker イメージを利用して静的検査して `book.pdf` が作られる
 
 ```
-$ docker run --rm -v `pwd`:/work techbookfest /bin/sh -c "cd /work && textlint *.re && review-pdfmaker config.yml"
+$ docker run --rm -v `pwd`:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textlint *.re && review-pdfmaker config.yml"
 ```
 
 `pwd` の部分はリポジトリまでの絶対パス
