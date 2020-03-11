@@ -1,6 +1,6 @@
 # techbookfest-template
 
-[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います。
+[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは4.0です)。
 手元でビルドする場合は、Docker があると便利です。
 
 ## PDF の作り方
@@ -16,7 +16,7 @@ $ git clone git@github.com:mixi-inc/techbookfest-template.git
 [vvakame/review](https://hub.docker.com/r/vvakame/review/) のイメージをベースにして、textlint による静的解析を行うために諸々インストールしたイメージです。
 
 ```
-$ docker build -t techbookfest .
+$ docker build -t techbookfest manifest
 ```
 
 ### ビルド
@@ -24,7 +24,7 @@ $ docker build -t techbookfest .
 上記の Docker イメージを利用して静的検査して `book.pdf` が作られる
 
 ```
-$ docker run --rm -v `pwd`:/work techbookfest /bin/sh -c "cd /work && textlint *.re && review-pdfmaker config.yml"
+$ docker run --rm -v `pwd`:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textlint *.re && review-pdfmaker config.yml"
 ```
 
 `pwd` の部分はリポジトリまでの絶対パス
@@ -35,13 +35,15 @@ $ docker run --rm -v `pwd`:/work techbookfest /bin/sh -c "cd /work && textlint *
 2. トップに `namae.re` をおきます
 3. `catalog.yml` の `CHAPS` に `namae.re` を追記します
 4. 執筆します
-    - フォーマットは [Re:VIEW (v3.2)](https://github.com/kmuto/review/tree/v3.2.0)
+    - フォーマットは [Re:VIEW (v4.0)](https://github.com/kmuto/review/tree/v4.0.0)
     - 画像類は `image` ディレクトリに適当にサブディレクトリを作っておいてください
 5. `atogaki.re` にあとがきを書きます(例は `atogaki.re` に書いてある)
 6. プッシュして PR を作ります(特にフォーマットはない)
 7. 誰かがレビューして、添削して、マージされます
 
 (`namae.re` は各位で適当に読み替えてネ)
+
+コンフリクトを避けるために 2,3 は既に準備されている場合もあります。
 
 ### vs. textlint
 
