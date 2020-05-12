@@ -1,0 +1,15 @@
+name: build docker image and exec review
+on:
+  pull_request: null
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build docker image
+      run: docker build -t techbookfest template/manifest
+    - name: Exec Re:VIEW with docker image
+      run: docker run --rm -v `pwd`/template:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textlint *.re && review-pdfmaker config.yml"
