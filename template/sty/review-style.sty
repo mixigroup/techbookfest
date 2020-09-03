@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{review-style}[2018/07/01]
+\ProvidesPackage{review-style}[2019/09/16]
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
@@ -7,15 +7,15 @@
 \chead{}
 \rhead{\gtfamily\sffamily\bfseries\upshape \rightmark}
 \fancyfoot{} % clear all header and footer fields
-\fancyfoot[C]{\thepage}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\hskip0.5zw~#1}{}}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\prechaptername\ \thechapter\ \postchaptername~#1}{}}
 \renewcommand{\headfont}{\gtfamily\sffamily\bfseries}
 
 \fancypagestyle{plainhead}{%
 \fancyhead{}
 \fancyfoot{} % clear all header and footer fields
-\fancyfoot[C]{\thepage}
+\fancyfoot[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
