@@ -1,0 +1,50 @@
+name: Publish Docker image
+on:
+  release:
+    types: [published]
+  pull_request: null # ToDo: delete
+jobs:
+  push_to_registry:
+    name: Push Docker image to GitHub Packages
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Prepare
+        id: prep
+        run: |
+          DOCKER_IMAGE=ghcr.io/mixigroup/techbookfest
+          TAGS="${DOCKER_IMAGE}:latest"
+          if [[ $GITHUB_REF == refs/tags/v* ]]; then
+            TAGS="$TAGS,${DOCKER_IMAGE}:${GITHUB_REF#refs/tags/v}"
+          fi
+          echo ::set-output name=tags::${TAGS}
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@master
+        with:
+          platforms: all
+
+      - name: Setup Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@master
+        with:
+          version: latest
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ./template/manifest
+          file: ./template/manifest/Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/386
+          tags: ${{ steps.prep.outputs.tags }}
+          push: true
