@@ -5,6 +5,7 @@
 - Re:VIEW のバージョンを 4.2 に更新
 - npm の依存パッケージを更新
 - GitHub Actions の導入
+- [textlint-filter-rule-allowlist](https://github.com/textlint/textlint-filter-rule-allowlist) の導入
 
 ## 書典8
 
