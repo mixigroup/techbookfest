@@ -1,6 +1,6 @@
 # techbookfest-template
 
-[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは4.0です)。
+[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは4.2です)。
 手元でビルドする場合は、Docker があると便利です。
 
 ## PDF の作り方
@@ -35,7 +35,7 @@ $ docker run --rm -v `pwd`:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textl
 2. トップに `namae.re` をおきます
 3. `catalog.yml` の `CHAPS` に `namae.re` を追記します
 4. 執筆します
-    - フォーマットは [Re:VIEW (v4.0)](https://github.com/kmuto/review/tree/v4.0.0)
+    - フォーマットは [Re:VIEW (v4.2)](https://github.com/kmuto/review/tree/v4.2.0)
     - 画像類は `image` ディレクトリに適当にサブディレクトリを作っておいてください
 5. `atogaki.re` にあとがきを書きます(例は `atogaki.re` に書いてある)
 6. プッシュして PR を作ります(特にフォーマットはない)
@@ -52,9 +52,12 @@ PR を出した時に CodeBuild 上で [textlint](https://github.com/textlint/te
 エラー文言の通りに直せるのならば特に問題ないのですが、場合によっては(もともと引用の文言であるとか宗教上の理由とか) textlint の校正結果を無視したいでしょう。
 その方法はいくつかあるので以下に列挙しておきます:
 
-1. `prh.yaml` を書き換える
+1. textlint-filter-rule-allowlist に追加する
+    - .textlintrc.json の `filters.allowlist.allow` に単語を登録すると textlint のチェックがされなくなります
     - ただし、他の人も影響する点に注意
-2. `#@# textlint-disable` `#@# textlint-enable` で対象の行を囲む
+2. `prh.yaml` を書き換える
+    - ただし、他の人も影響する点に注意
+3. `#@# textlint-disable` `#@# textlint-enable` で対象の行を囲む
     - ```
       #@# textlint-disable
 
@@ -67,15 +70,13 @@ PR を出した時に CodeBuild 上で [textlint](https://github.com/textlint/te
 
 他にも方法があれば追記して ;)
 
-## 設定
+## CI/CD設定
 
-CI などのためにスクリプトに下記の値を追加する
+GitHub Actions を使います（[設定](.github/workflows/build.yaml)を参考してください）。
+以下の2つのシークレットを設定してください：
 
-- script/exec_textlint.sh の `REPO` にリポジトリ名 (org/repo)
-- script/exec_textlint.sh の `GH_TOKEN` に GitHub のトークン (シークレットなどで)
-- script/upload-pdf-to-slack の `REPO` にリポジトリ名 (org/repo)
-- script/upload-pdf-to-slack の `SLACK_CHANNEL` に通知したい Slack チャンネル名
-- script/upload-pdf-to-slack の `SLACK_TOKEN` に通知したい Slack のトークン (シークレットなどで)
+- `SLACK_CHANNEL` に通知したい Slack チャンネル名
+- `SLACK_TOKEN` に通知したい Slack のトークン
 
 ## 表紙と裏表紙
 

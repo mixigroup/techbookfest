@@ -4,8 +4,8 @@
 #cd techbookfest-template
 
 # 版情報作成
-PR_NUM=$(echo ${CODEBUILD_SOURCE_VERSION} | sed 's/pr\/\(.*\)/\1/')
-HISTORY="<https://github.com/${REPO}/issues/${PR_NUM}|PR-${PR_NUM}>"
+PR_NUM=$(echo ${GITHUB_REF} | sed 's/refs\/pull\/\(.*\)\/merge/\1/')
+HISTORY="<https://github.com/${GITHUB_REPOSITORY}/issues/${PR_NUM}|PR-${PR_NUM}>"
 echo ${HISTORY}
 
 # Slack 投稿用コメント作成

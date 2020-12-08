@@ -1,5 +1,16 @@
 # CHANGE LOG
 
+## 書典9
+
+- Re:VIEW のバージョンを 4.2 に更新
+- npm の依存パッケージを更新
+- GitHub Actions の導入
+- [textlint-filter-rule-allowlist](https://github.com/textlint/textlint-filter-rule-allowlist) の導入
+
+## 書典8
+
+- テンプレートのベースを Re:VIEW4 に変更
+
 ## 書典7
 
 - テンプレートのベースを Re:VIEW3 に変更
