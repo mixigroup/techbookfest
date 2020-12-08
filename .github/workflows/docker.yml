@@ -18,8 +18,8 @@ jobs:
         run: |
           DOCKER_IMAGE=ghcr.io/mixigroup/techbookfest
           TAGS="${DOCKER_IMAGE}:latest"
-          if [[ $GITHUB_REF == refs/tags/v* ]]; then
-            TAGS="$TAGS,${DOCKER_IMAGE}:${GITHUB_REF#refs/tags/v}"
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            TAGS="$TAGS,${DOCKER_IMAGE}:${GITHUB_REF#refs/tags/}"
           fi
           echo ::set-output name=tags::${TAGS}
 
