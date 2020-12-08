@@ -35,7 +35,7 @@ $ docker run --rm -v `pwd`:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textl
 2. トップに `namae.re` をおきます
 3. `catalog.yml` の `CHAPS` に `namae.re` を追記します
 4. 執筆します
-    - フォーマットは [Re:VIEW (v4.0)](https://github.com/kmuto/review/tree/v4.0.0)
+    - フォーマットは [Re:VIEW (v4.2)](https://github.com/kmuto/review/tree/v4.0.0)
     - 画像類は `image` ディレクトリに適当にサブディレクトリを作っておいてください
 5. `atogaki.re` にあとがきを書きます(例は `atogaki.re` に書いてある)
 6. プッシュして PR を作ります(特にフォーマットはない)
