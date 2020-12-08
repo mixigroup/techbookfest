@@ -1,0 +1,21 @@
+name:
+on:
+  pull_request: null
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container:
+      image: ghcr.io/mixigroup/techbookfest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Exec Re:VIEW with docker image
+      run: ./script/export-pdf.sh
+    - name: Post generated PDF to Slack
+      run: ./script/upload-pdf-to-slack.sh
+      env:
+        SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    - name: Exec textlint and post result to PR
+      run: ./script/exec_textlint.sh
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
