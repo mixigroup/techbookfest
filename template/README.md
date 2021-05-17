@@ -1,6 +1,6 @@
 # techbookfest-template
 
-[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは5.0です)。
+[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは5.1です)。
 手元でビルドする場合は、Docker があると便利です。
 
 ## PDF の作り方
@@ -35,7 +35,7 @@ $ docker run --rm -v `pwd`:/work/tmp -w /work/tmp techbookfest /bin/sh -c "textl
 2. トップに `namae.re` をおきます
 3. `catalog.yml` の `CHAPS` に `namae.re` を追記します
 4. 執筆します
-    - フォーマットは [Re:VIEW (v5.0)](https://github.com/kmuto/review/tree/v5.0.0)
+    - フォーマットは [Re:VIEW (v5.1.1)](https://github.com/kmuto/review/tree/v5.1.1)
     - 画像類は `image` ディレクトリに適当にサブディレクトリを作っておいてください
 5. `atogaki.re` にあとがきを書きます(例は `atogaki.re` に書いてある)
 6. プッシュして PR を作ります(特にフォーマットはない)
