@@ -1,4 +1,4 @@
-FROM vvakame/review:5.1
+FROM vvakame/review:5.3
 WORKDIR /work
 COPY . /work
 RUN npm install
