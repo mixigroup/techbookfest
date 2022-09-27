@@ -2629,9 +2629,9 @@ rules:
   - expected: MiniMagick
     pattern:  /\bMiniMagick\b/i
   - expected: MIXI
-    pattern:  /\b[^SNS「]mixi[^」)]\b/i
-  - expected: MIXI
-    pattern:  /ミクシィ/
+    pattern:  
+      - /\b(?!SNS「)mixi(?!」)\b/
+      - /ミクシィ/
   - expected: MongoDB
     pattern:  /\bMongo DB\b/
   - expected: msysGit
