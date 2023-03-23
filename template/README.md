@@ -1,6 +1,6 @@
 # techbookfest-template
 
-[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは5.5です)。
+[Re:VIEW](https://github.com/kmuto/review) と言う組版システムを使います(バージョンは5.7です)。
 手元でビルドする場合は、Docker があると便利です。
 
 ## PDF の作り方
