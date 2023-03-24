@@ -1,4 +1,4 @@
-FROM ghcr.io/vvakame/review:5.5
+FROM ghcr.io/vvakame/review:5.7
 WORKDIR /work
 COPY . /work
 RUN npm install
