@@ -10,6 +10,8 @@
 
 [一覧: 技術書典 オンラインマーケット](https://techbookfest.org/organization/54670001)
 
+- [書典13: MIXI TECH NOTE #08 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-08)
+- [書典12: mixi tech note #07 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-07)
 - [書典11: mixi tech note #06 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-06)
 - [書典10: mixi tech note #05 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-05)
 - [書典9: mixi tech note #04 (PDF)](https://speakerdeck.com/mixi_engineers/mixi-tech-note-number-04)
@@ -21,6 +23,8 @@
 
 ## Links
 
+- [ミクシィは「技術書典13」に出品します！ - MIXI DEVELOPERS - Medium](https://mixi-developers.mixi.co.jp/techbookfest13-e5f811311e26)
+- [ミクシィは「技術書典12」に出品します！ - MIXI DEVELOPERS - Medium](https://mixi-developers.mixi.co.jp/techbookfest12-36f0239207a4)
 - [ミクシィは「技術書典11」に出品します！ - mixi developers - Medium](https://mixi-developers.mixi.co.jp/techbookfest11-f6f3e0cc1b96)
 - [ミクシィは「技術書典10」に出品します！ - mixi developers - Medium](https://medium.com/mixi-developers/techbookfest10-227713d6b1b6)
 - [ミクシィは「技術書典9」に出品しました！ - mixi developers - Medium](https://medium.com/mixi-developers/techbookfest9-327ad5f5d7e5)

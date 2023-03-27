@@ -22,11 +22,11 @@ language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: "mixi tech note #XX"
+booktitle: "MIXI TECH NOTE #XX"
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
-aut: ["株式会社ミクシィ 有志"]
+aut: ["株式会社MIXI 有志"]
 
 # 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
@@ -55,8 +55,8 @@ aut: ["株式会社ミクシィ 有志"]
 # a-nrt, nrt: 語り手
 # a-oth, oth: その他
 # a-pht, pht: 撮影責任者
-pbl: ["株式会社ミクシィ"]
-prt: ["日光企画"] # ToDo 本当にそうなるかはまだわからん
+pbl: ["株式会社MIXI"]
+prt: ["〇〇"] # ToDo 本当にそうなるかはまだわからん
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
 # a-spn, spn: 援助者
@@ -72,7 +72,7 @@ date: 2019-9-22
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
 history: [["2019-09-22"]]
 # 権利表記(配列で複数指定可)
-rights: ©mixi, Inc.
+rights: ©MIXI, Inc.
 # description: 説明
 # subject: 短い説明用タグ(配列で複数指定可)
 # type: 書籍のカテゴリーなど(配列で複数指定可)
